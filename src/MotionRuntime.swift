@@ -69,12 +69,7 @@ public final class MotionRuntime {
     interaction.add(to: target, withRuntime: self, constraints: constraints)
 
     let identifier = ObjectIdentifier(target)
-    var targetInteractions: [Any]
-    if let existingInteractions = targets[identifier] {
-      targetInteractions = existingInteractions
-    } else {
-      targetInteractions = []
-    }
+    var targetInteractions = targets[identifier] ?? []
     targetInteractions.append(interaction)
     targets[identifier] = targetInteractions
   }
